@@ -1,0 +1,37 @@
+#N canvas -94 22 1243 752 10;
+#N canvas 0 22 450 300 (subpatch) 0;
+#X array dataAAA 100 float 3;
+#A 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0
+0;
+#X coords 0 1 100 -1 200 140 1;
+#X restore 587 295 graph;
+#X obj 338 44 r fromOF;
+#X obj 481 72 hsl 128 15 0 480 0 0 empty empty empty -2 -8 0 10 -262144
+-1 -1 3400 1;
+#X obj 327 484 dac~;
+#X obj 501 349 metro 100;
+#X obj 517 300 loadbang;
+#X obj 358 316 *~;
+#X obj 404 280 sig~;
+#X obj 442 253 / 320;
+#X obj 407 425 tabwrite~ dataAAA;
+#X obj 539 181 vsl 15 50 0 320 0 0 empty empty empty 0 -9 0 10 -262144
+-1 -1 0 1;
+#X obj 462 210 r volume;
+#X obj 347 171 osc~;
+#X obj 390 126 * 10;
+#X connect 1 0 13 0;
+#X connect 2 0 13 0;
+#X connect 4 0 9 0;
+#X connect 5 0 4 0;
+#X connect 6 0 3 1;
+#X connect 6 0 3 0;
+#X connect 6 0 9 0;
+#X connect 7 0 6 1;
+#X connect 8 0 7 0;
+#X connect 10 0 8 0;
+#X connect 11 0 8 0;
+#X connect 12 0 6 0;
+#X connect 13 0 12 0;
